@@ -50,8 +50,8 @@
             <template #description>
               <ul class="info-list">
                 <template
-                  v-for="(distributionInfo, index) in previousDistributionsList"
-                  :key="index"
+                  v-for="distributionInfo in previousDistributionsList"
+                  :key="distributionInfo.id"
                 >
                   <template
                     v-for="deliveryInfo in distributionInfo.deliveries_data"
@@ -113,8 +113,8 @@
             <template #description>
               <ul class="info-list">
                 <template
-                  v-for="(distributionInfo, index) in previousDistributionsList"
-                  :key="index"
+                  v-for="distributionInfo in previousDistributionsList"
+                  :key="distributionInfo.id"
                 >
                   <template
                     v-for="deliveryInfo in distributionInfo.deliveries_data"
@@ -172,8 +172,8 @@
             <template #description>
               <ul class="info-list">
                 <template
-                  v-for="(distributionInfo, index) in previousDistributionsList"
-                  :key="index"
+                  v-for="distributionInfo in previousDistributionsList"
+                  :key="distributionInfo.id"
                 >
                   <template
                     v-for="deliveryInfo in distributionInfo.deliveries_data"
@@ -223,8 +223,8 @@
             <template #description>
               <ul class="info-list">
                 <template
-                  v-for="(distributionInfo, index) in previousDistributionsList"
-                  :key="index"
+                  v-for="distributionInfo in previousDistributionsList"
+                  :key="distributionInfo.id"
                 >
                   <template
                     v-for="deliveryInfo in distributionInfo.deliveries_data"
