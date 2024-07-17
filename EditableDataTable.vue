@@ -12,6 +12,8 @@ import UiButton from '@/components/common/UiButton/UiButton.vue'
 import { Currency } from '@/constants/currencies'
 import UiSelectButton from '@/components/common/UiSelectButton/UiSelectButton.vue'
 
+const MAX_ROWS = 8
+
 const { t } = useI18n()
 
 const rowData = ref({
@@ -37,7 +39,7 @@ const selectedCurrency = ref(Currency.USD)
 const btnContent = ref(t('table.btnAddRow'))
 
 const onCellEditComplete = async (event: DataTableCellEditCompleteEvent) => {
-  let { newValue, field, index } = event
+  const { newValue, field, index } = event
 
   if (newValue) {
     if (field === 'purchase.date') {
@@ -73,11 +75,11 @@ const recalculateVariables = (deal: Deal) => {
 }
 
 const handleAddRow = () => {
-  table.value.data.length < 8 ? table.value.data.push(getDeal()) : null
+  table.value.data.length < MAX_ROWS ? table.value.data.push(getDeal()) : null
 }
 
 watch(
-  () => table.value.data.length < 8,
+  () => table.value.data.length < MAX_ROWS,
   () => (btnContent.value = t('table.btnYourLimitLeft'))
 )
 
